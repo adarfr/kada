@@ -183,12 +183,12 @@ function T({ k }) {
 
 // --- Helpers ---------------------------------------------------------------
 function safeMailValue(email) {
-  const ok = /^(?:[^\\s@]+)@(?:[^\\s@]+)\\.[^\\s@]+$/.test(email || "");
+  const ok = /^(?:[^\s@]+)@(?:[^\s@]+)\.[^\s@]+$/.test(email || "");
   return ok ? email : undefined;
 }
 function safePhoneValue(phone) {
   const cleaned = String(phone || "").replace(/[^0-9+]/g, "");
-  const ok = /^\\+?[0-9]{6,}$/.test(cleaned);
+  const ok = /^\+?[0-9]{6,}$/.test(cleaned);
   return ok ? cleaned : undefined;
 }
 
@@ -241,7 +241,7 @@ function ActionLink({ kind, value, className = "", children }) {
 }
 
 function ExternalLinkButton({ href, className = "", children, ariaLabel }) {
-  const isHttps = typeof href === "string" && /^https:\\/\\//i.test(href);
+  const isHttps = typeof href === "string" && /^https:\/\//i.test(href);
   const handle = () => {
     if (!isHttps) return;
     try { window.open(href, "_blank", "noopener,noreferrer"); } catch {}
