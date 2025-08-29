@@ -728,7 +728,7 @@ function AppShell() {
 
       // Partner URLs must be absolute https
       [DONATION_CONFIG.us501c3.partnerUrl, DONATION_CONFIG.canada.partnerUrl, DONATION_CONFIG.uk.partnerUrl].forEach((u) => {
-        console.assert(/^https:\\/\\//.test(u), 'partner URL must be absolute https');
+        console.assert(/^https:\/\//.test(u), 'partner URL must be absolute https');
       });
 
       // ActionLink buttons (mailto/tel) expose sanitized values
