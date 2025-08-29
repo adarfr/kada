@@ -549,7 +549,7 @@ function AboutPage() {
 function DonateCard({ title, children, cta, href }) {
   const { navigate } = useRouter();
   const isInternal = typeof href === "string" && href.startsWith("/");
-  const isExternal = typeof href === "string" && /^https?:\\/\\//i.test(href);
+  const isExternal = typeof href === "string" && /^https?:\/\//i.test(href);
   return (
     <div className="rounded-3xl border p-6 bg-white">
       <h3 className="font-semibold text-lg">{title}</h3>
